@@ -28,7 +28,7 @@ def modify_urls(input_file, output_file, words_to_remove):
 # Example usage:
 input_file = 'csv/input.csv'
 output_file = 'csv/just_urls.csv'
-words_to_remove = ['delete', 'archive', 'suspend']
+words_to_remove = ['Delete', 'Archive', 'Select', 'Deactivate', 'Dashboard', 'Spam', '|', 'Visit', 'Copy', 'Edit']
 modify_urls(input_file, output_file, words_to_remove)
 
 print("CSV file processed successfully. Removed words from urls and saved to", output_file)

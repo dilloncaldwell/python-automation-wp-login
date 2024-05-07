@@ -8,12 +8,15 @@ output_file = 'csv/wp-admin_urls.csv'
 def trim_spaces(url):
   return url.strip()
 
-# Function to add /wp-admin to URL
+
+# Function to add https:// to URLs if missing and add /wp-admin to URL
 def add_wp_admin(url):
+  if not url.startswith('http'):
+    url = 'https://' + url
   if url.endswith('/'):
-    return url + 'wp-admin/edit.php?post_type=acf-field-group'
+    return url + 'wp-admin'
   else:
-    return url + '/wp-admin/edit.php?post_type=acf-field-group'
+    return url + '/wp-admin'
 
 # Read input CSV file, trim spaces, add /wp-admin to URLs, and write to output CSV file
 with open(input_file, 'r', newline='') as infile, open(output_file, 'w', newline='') as outfile:
