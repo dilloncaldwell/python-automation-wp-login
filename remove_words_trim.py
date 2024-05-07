@@ -25,7 +25,6 @@ def modify_urls(input_file, output_file, words_to_remove):
       writer = csv.writer(err_file)
       writer.writerows([[url] for url in error_urls])
 
-# Example usage:
 input_file = 'csv/input.csv'
 output_file = 'csv/just_urls.csv'
 words_to_remove = ['Delete', 'Archive', 'Select', 'Deactivate', 'Dashboard', 'Spam', '|', 'Visit', 'Copy', 'Edit']
